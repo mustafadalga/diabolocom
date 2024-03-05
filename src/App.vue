@@ -5,10 +5,10 @@ import LocalePicker from "@/components/LocalePicker.vue";
 </script>
 
 <template>
-  <main class="grid px-4 md:px-5 py-8 md:py-12">
+  <main class="grid px-4 md:px-5 py-2">
     <LocalePicker/>
 
-    <div class="mt-10 grid gap-10">
+    <div class="mt-10 py-6 md:py-10 grid gap-10">
       <MetricsDisplay/>
       <Counter/>
     </div>
