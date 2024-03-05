@@ -18,18 +18,24 @@ function toggleOptions() {
 
 <template>
   <div class="ml-auto grid place-items-center relative gap-2">
-    <IconLanguage class="cursor-pointer w-8 h-8"
-                  fill-class="fill-purple-900"
-                  @click="toggleOptions"/>
+    <button data-testid="btn-icon-language" @click="toggleOptions">
+      <IconLanguage class="w-8 h-8"
+                    fill-class="fill-purple-900"/>
+    </button>
 
     <div v-if="showOptions"
+         data-testid="locale-picker-options"
          class="absolute top-full right-full z-10 grid content-baseline bg-white shadow-[0_2px_3px_rgba(0,0,0,0.06)] rounded-md text-xs lg:text-sm text-gray-600 font-medium">
 
-      <button class="mx-1 px-8 py-2 border-b border-gray-200" @click="switchLocale('en')">
+      <button class="mx-1 px-8 py-2 border-b border-gray-200"
+              data-testid="btn-english"
+              @click="switchLocale('en')">
         {{ t("english") }}
       </button>
 
-      <button class="mx-1 px-8 py-2" @click="switchLocale('fr')">
+      <button class="mx-1 px-8 py-2"
+              data-testid="btn-french"
+              @click="switchLocale('fr')">
         {{ t("french") }}
       </button>
     </div>
