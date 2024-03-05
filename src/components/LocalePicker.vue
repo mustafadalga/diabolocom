@@ -20,7 +20,7 @@ function toggleOptions() {
   <div class="ml-auto grid place-items-center relative gap-2">
     <button data-testid="btn-icon-language" @click="toggleOptions">
       <IconLanguage class="w-8 h-8"
-                    fill-class="fill-purple-900"/>
+                    strokeClass="stroke-gray-600"/>
     </button>
 
     <div v-if="showOptions"
