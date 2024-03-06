@@ -1,5 +1,6 @@
 import { createI18n } from "vue-i18n";
 import { defaultLocale } from "@/constants";
+import { ref, watch } from "vue";
 
 export const messages = {
     en: {
@@ -20,9 +21,15 @@ export const messages = {
     },
 };
 
+export const locale = ref(defaultLocale);
+
 export const i18n = createI18n({
     legacy: false,
-    locale: defaultLocale,
+    locale: locale.value,
     fallbackLocale: defaultLocale,
     messages,
+});
+
+watch(locale, (newValue: string) => {
+    i18n.global.locale.value = newValue as typeof i18n.global.locale.value;
 });
