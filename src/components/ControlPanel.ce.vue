@@ -13,3 +13,7 @@ const { t } = useI18n()
     {{ t("reset") }}
   </button>
 </template>
+
+<style>
+@import url("@/style.css");
+</style>

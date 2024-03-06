@@ -4,8 +4,8 @@ import store from "@/store";
 import mountComponent from "@/utilities/mountComponent.ts";
 import { i18n, messages } from "@/utilities/i18n.ts";
 import { defaultLocale } from "@/constants";
-import Counter from "./Counter.vue";
-import ControlPanel from "./ControlPanel.vue";
+import Counter from "@/components/Counter.ce.vue";
+import ControlPanel from "@/components/ControlPanel.ce.vue";
 
 
 describe('Counter', () => {

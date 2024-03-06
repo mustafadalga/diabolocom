@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import store from "@/store";
 import { useI18n } from "vue-i18n";
-import ControlPanel from "./ControlPanel.vue";
 
 const { t } = useI18n()
 </script>
@@ -24,6 +23,10 @@ const { t } = useI18n()
       </button>
     </div>
 
-    <ControlPanel/>
+    <control-panel></control-panel>
   </div>
 </template>
+
+<style>
+@import url("@/style.css");
+</style>

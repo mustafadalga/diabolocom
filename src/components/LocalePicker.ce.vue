@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
+
 import IconLanguage from "@/components/icons/IconLanguage.vue";
 
 const { locale, t } = useI18n();
@@ -17,7 +18,7 @@ function toggleOptions() {
 </script>
 
 <template>
-  <div class="ml-auto grid place-items-center relative gap-2">
+  <div class="ml-auto relative w-8 h-8 grid place-items-center gap-2">
     <button data-testid="btn-icon-language" @click="toggleOptions">
       <IconLanguage class="w-8 h-8"
                     strokeClass="stroke-gray-600"/>
@@ -41,3 +42,7 @@ function toggleOptions() {
     </div>
   </div>
 </template>
+
+<style scoped>
+@import url("@/style.css");
+</style>
