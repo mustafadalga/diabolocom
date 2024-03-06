@@ -3,7 +3,7 @@ import {  VueWrapper } from "@vue/test-utils";
 import { i18n, messages } from "@/utilities/i18n.ts";
 import mountComponent from "@/utilities/mountComponent.ts";
 import { defaultLocale } from "@/constants";
-import LocalePicker from "@/components/LocalePicker.ce.vue";
+import LocalePicker from "./LocalePicker.ce.vue";
 
 
 describe('LocalePicker', () => {

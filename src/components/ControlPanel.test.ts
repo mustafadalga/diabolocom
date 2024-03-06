@@ -3,7 +3,7 @@ import { VueWrapper } from "@vue/test-utils";
 import store from "@/store";
 import mountComponent from "@/utilities/mountComponent.ts";
 import { messages } from "@/utilities/i18n.ts";
-import ControlPanel from "@/components/ControlPanel.ce.vue";
+import ControlPanel from "./ControlPanel.ce.vue";
 
 describe('ControlPanel', () => {
     let wrapper: VueWrapper<typeof ControlPanel>;

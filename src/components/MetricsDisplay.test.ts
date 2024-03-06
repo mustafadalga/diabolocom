@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { flushPromises, VueWrapper } from "@vue/test-utils";
-import MetricsDisplay from "@/components/MetricsDisplay.ce.vue";
+import MetricsDisplay from "./MetricsDisplay.ce.vue";
 import store from "@/store";
 import { i18n, messages } from "@/utilities/i18n.ts";
 import mountComponent from "@/utilities/mountComponent.ts";
