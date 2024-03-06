@@ -1,7 +1,17 @@
-import { createApp } from 'vue'
+import { createApp, defineCustomElement } from 'vue'
 import './style.css'
 import App from './App.vue';
-import { i18n } from "@/utilities/i18n.ts";
 
+import I18nHost from "@/components/I18nHost.vue";
+import LocalePicker from "@/components/LocalePicker.ce.vue";
+import Counter from "@/components/Counter.ce.vue";
+import ControlPanel from "@/components/ControlPanel.ce.vue";
+import MetricsDisplay from "@/components/MetricsDisplay.ce.vue";
 
-createApp(App).use(i18n).mount('#app')
+customElements.define('i18n-host', defineCustomElement(I18nHost));
+customElements.define('locale-picker', defineCustomElement(LocalePicker));
+customElements.define('counter-element', defineCustomElement(Counter));
+customElements.define('control-panel', defineCustomElement(ControlPanel));
+customElements.define('metrics-display', defineCustomElement(MetricsDisplay));
+
+createApp(App).mount('#app')
