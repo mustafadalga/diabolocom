@@ -15,6 +15,11 @@ This project is a ViteJS Vue TypeScript project that implements internationaliza
 ### Demo
 You can view the demo of the web components [here](https://diabolocom-web-components.vercel.app/), and the Vue.js project demo [here](https://diabolocom.vercel.app/).
 
+For more details on how to use the web components and the Vue.js project, please refer to their respective branches:
+- [Web Components Demo](https://github.com/mustafadalga/diabolocom/tree/web-components-demo)
+- [Vue.js Project Demo](https://github.com/mustafadalga/diabolocom/tree/demo)
+
+
 ## Project Setup
 
 ### Installation
