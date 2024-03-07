@@ -5,7 +5,6 @@ import mountComponent from "@/utilities/mountComponent.ts";
 import { i18n, messages } from "@/utilities/i18n.ts";
 import { defaultLocale } from "@/constants";
 import Counter from "./Counter.ce.vue";
-import ControlPanel from "./ControlPanel.ce.vue";
 
 
 describe('Counter', () => {
@@ -48,6 +47,7 @@ describe('Counter', () => {
     });
 
     it('should render ControlPanel component', () => {
-        expect(wrapper.findComponent(ControlPanel).exists()).toBe(true);
+        const controlPanelElement = wrapper.find('control-panel');
+        expect(controlPanelElement.exists()).toBe(true);
     });
 })
