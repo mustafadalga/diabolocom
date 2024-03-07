@@ -36,7 +36,7 @@ describe('LocalePicker', () => {
 
         // Simulate clicking on the language icon to show the options
         await wrapper.find('[data-testid="btn-icon-language"]').trigger('click');
-        await flushPromises()
+        await flushPromises();
 
         // options should be visible
         expect(wrapper.find('[data-testid="locale-picker-options"]').exists()).toBe(true);

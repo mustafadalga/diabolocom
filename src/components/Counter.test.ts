@@ -21,7 +21,7 @@ describe('Counter', () => {
         expect(btn.text()).toBe(messages.en.increment);
     });
 
-    it('should display the correct decrement button text in French', async () => {
+    it('should display the correct decrement button text in French', () => {
         // Dynamically change the locale to French for this test
         i18n.global.locale.value = 'fr';
         const wrapper = mountComponent<typeof Counter>(Counter);

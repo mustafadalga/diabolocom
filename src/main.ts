@@ -2,7 +2,7 @@ import { createApp, defineCustomElement } from 'vue'
 import './style.css'
 import App from './App.vue';
 
-import I18nHost from "@/components/I18nHost.vue";
+import I18nHost from "@/components/I18nHost.ce.vue";
 import LocalePicker from "@/components/LocalePicker.ce.vue";
 import Counter from "@/components/Counter.ce.vue";
 import ControlPanel from "@/components/ControlPanel.ce.vue";
