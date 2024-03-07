@@ -1,13 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diabolocom</title>
-  </head>
-  <body class="bg-gray-100 h-screen w-screen">
-    <div id="app" class="h-screen w-screen"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Components - Project Demo</title>
+</head>
+<body class="bg-gray-100 h-screen w-screen">
+
+<main class="grid px-4 md:px-5 py-2">
+  <i18n-host>
+    <locale-picker></locale-picker>
+    <div class="mt-10 py-6 md:py-10 grid gap-10">
+      <metrics-display></metrics-display>
+      <counter-element></counter-element>
+    </div>
+  </i18n-host>
+</main>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script type="module" src="./dist/elements/i18n-host.js"></script>
+<script type="module" src="./dist/elements/locale-picker.js"></script>
+<script type="module" src="./dist/elements/metrics-display.js"></script>
+<script type="module" src="./dist/elements/counter.js"></script>
+<script type="module" src="./dist/elements/control-panel.js"></script>
+</body>
 </html>
