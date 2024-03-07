@@ -1,10 +1,9 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import {  VueWrapper } from "@vue/test-utils";
+import { flushPromises, VueWrapper } from "@vue/test-utils";
 import { i18n, messages } from "@/utilities/i18n.ts";
 import mountComponent from "@/utilities/mountComponent.ts";
 import { defaultLocale } from "@/constants";
 import LocalePicker from "./LocalePicker.ce.vue";
-
 
 describe('LocalePicker', () => {
     let wrapper: VueWrapper<typeof LocalePicker>
@@ -28,5 +27,24 @@ describe('LocalePicker', () => {
         await wrapper.find('[data-testid="btn-icon-language"]').trigger('click');
 
         expect(wrapper.html()).toContain(messages.fr.french);
+    });
+
+
+    it('should hides options when clicking outside', async () => {
+        // Initially, options should not be visible
+        expect(wrapper.find('[data-testid="locale-picker-options"]').exists()).toBe(false);
+
+        // Simulate clicking on the language icon to show the options
+        await wrapper.find('[data-testid="btn-icon-language"]').trigger('click');
+        await flushPromises()
+
+        // options should be visible
+        expect(wrapper.find('[data-testid="locale-picker-options"]').exists()).toBe(true);
+
+        // Simulate clicking outside of the locale picker
+        document.dispatchEvent(new MouseEvent('mousedown'));
+        await flushPromises();
+
+        expect(wrapper.find('[data-testid="locale-picker-options"]').exists()).toBe(false);
     });
 })
