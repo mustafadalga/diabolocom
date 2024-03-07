@@ -1,25 +1,45 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 
 import IconLanguage from "@/components/icons/IconLanguage.vue";
 
 const { locale, t } = useI18n();
+const localePickerRef = ref<HTMLElement | null>(null);
 const showOptions = ref<boolean>(false)
 
 function switchLocale(newLocale: string) {
   locale.value = newLocale;
-  toggleOptions();
+  toggleOptions(false);
 }
 
-function toggleOptions() {
-  showOptions.value = !showOptions.value
+function toggleOptions(status: boolean) {
+  showOptions.value = status
 }
+
+function handleClickOutside(event: Event) {
+  const clickedElement = event.composedPath()[0] as HTMLElement;
+  const isOutside = !(localePickerRef.value as HTMLElement).contains(clickedElement)
+
+  if (isOutside) {
+    toggleOptions(false);
+  }
+}
+
+
+onMounted(() => {
+  document.addEventListener('mousedown', handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('mousedown', handleClickOutside);
+})
 </script>
 
 <template>
-  <div class="ml-auto relative w-8 h-8 grid place-items-center gap-2">
-    <button data-testid="btn-icon-language" @click="toggleOptions">
+  <div ref="localePickerRef" class="ml-auto relative w-8 h-8 grid place-items-center gap-2">
+    <button data-testid="btn-icon-language"
+            @click="toggleOptions(!showOptions)">
       <IconLanguage class="w-8 h-8"
                     strokeClass="stroke-gray-600"/>
     </button>
