@@ -5,7 +5,6 @@ This project is a ViteJS Vue TypeScript project that implements internationaliza
 ### Used Technologies
 
 * Vue.js
-* TailwindCSS
 * Typescript
 * Tailwind CSS
 * vue-i18n
